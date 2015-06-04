@@ -268,8 +268,9 @@ class ViewController: UIViewController , UIScrollViewDelegate {
     //MARK:- Animation
     func startAnimation() {
         _scrollView.delegate = nil
+        var animationTime : NSTimeInterval = NSTimeInterval(imageViewWidth) / 100
         UIView.animateWithDuration(
-            1.0,
+            animationTime,
             delay:0.0,
             options:UIViewAnimationOptions.CurveLinear,
             animations: {() -> Void in
