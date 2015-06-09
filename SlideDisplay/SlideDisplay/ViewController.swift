@@ -57,6 +57,9 @@ class ViewController: UIViewController , UIScrollViewDelegate {
     var movieIndex:NSInteger = 0
     var playerLayer:AVPlayerLayer!
     
+    //
+    let imageChache : ImageCacheObject = ImageCacheObject()
+    
     //UI
     @IBOutlet weak var _scrollView: UIScrollView!
     @IBOutlet weak var _subView: UIView!
@@ -216,7 +219,7 @@ class ViewController: UIViewController , UIScrollViewDelegate {
     {
         if let imgPath = NSBundle.mainBundle().pathForResource(name, ofType: "jpg")
         {
-            return UIImage(contentsOfFile: imgPath)
+            return imageChache.getUncachedImage(imgPath)
         }
         return nil
     }
